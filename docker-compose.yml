@@ -1,19 +1,11 @@
 services:
-  mongodb:
-    image: mongo:latest
-    container_name: mongodb-videos
-    restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: root
-    ports:
-    - "27017:27017"
-  rabbitmq:
-        image: rabbitmq:3-management 
-        container_name: rabbitmq-videos
-        ports:
-        - "5672:5672"       
-        - "15672:15672"    
+  mariadb:
+        image: mariadb:latest
+        container_name: mariadb-users
         environment:
-            RABBITMQ_DEFAULT_USER: guest
-            RABBITMQ_DEFAULT_PASS: guest
+            MYSQL_ROOT_PASSWORD: rootpassword
+            MYSQL_DATABASE: mydatabase
+            MYSQL_USER: user
+            MYSQL_PASSWORD: userpassword
+        ports:
+            - "3306:3306"
