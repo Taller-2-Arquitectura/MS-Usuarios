@@ -1,4 +1,4 @@
-const { PrismaClient: MariaClient } = require('../../prisma/generated/mariadb');
+const { PrismaClient: MariaClient } = require('../../prisma/src/generated/prisma');
 
 const mariadb = new MariaClient();
 
